@@ -1,6 +1,7 @@
 from __future__ import print_function
 import platform
 import sys
+import pexpect
 make_child = pexpect.spawn('ssh '+sys.argv[2]+'@'+sys.argv[1])
 make_child.expect ('password:')
 make_child.sendline (sys.argv[3])
