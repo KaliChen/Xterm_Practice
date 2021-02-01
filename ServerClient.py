@@ -87,24 +87,24 @@ class Server_Client():
         
         tk.Label(self.ClientCtrFrame, text='User', font=('Courier', 10),width=15, height=2).pack(side=tk.LEFT, expand=tk.NO, fill = tk.X)
         
-        self.clientUser = tk.Entry(self.ClientCtrFrame, textvariable=self.CLIENT_USER)
-        self.clientUser.pack(side=tk.LEFT, expand=tk.NO, fill = tk.X)       
+        self.ClientUser = tk.Entry(self.ClientCtrFrame, textvariable=self.CLIENT_USER)
+        self.ClientUser.pack(side=tk.LEFT, expand=tk.NO, fill = tk.X)       
         
         tk.Label(self.ClientCtrFrame, text='Password', font=('Courier', 10),width=15, height=2).pack(side=tk.LEFT, expand=tk.NO, fill = tk.X)
         
-        self.clientPasswd = tk.Entry(self.ClientCtrFrame, textvariable=self.CLIENT_PASSWD, show = "*")
-        self.clientPasswd.pack(side=tk.LEFT, expand=tk.NO, fill = tk.X)        
+        self.ClientPasswd = tk.Entry(self.ClientCtrFrame, textvariable=self.CLIENT_PASSWD, show = "*")
+        self.ClientPasswd.pack(side=tk.LEFT, expand=tk.NO, fill = tk.X)        
         
         self.ClientTerminal = tk.Frame(self.runClientFrame, height = 350)
         self.ClientTerminal.pack(side=tk.TOP, expand=tk.YES, fill = tk.BOTH)
             
     def runServer(self, event = None):
         Serverframe_id = self.ServerTerminal.winfo_id()
-        subprocess.Popen(["xterm","-into", str(Serverframe_id), "-geometry", "200x30", "-e", "python3","runserver1.py", self.SERVER_ADDRESS, self.SERVER_USER, self.SERVER_PASSWD])
+        subprocess.Popen(["xterm","-into", str(Serverframe_id), "-geometry", "200x30", "-e", "python3","runServer1.py", self.SERVER_ADDRESS, self.SERVER_USER, self.SERVER_PASSWD])
       
     def runClient(self, event = None):
         Clientframe_id = self.ClientTerminal.winfo_id()
-        subprocess.Popen(["xterm","-into", str(Clientframe_id), "-geometry", "200x30", "-e", "python3","runclient1.py", self.Client_ADDRESS, self.CLIENT_USER, self.CLIENT_PASSWD])
+        subprocess.Popen(["xterm","-into", str(Clientframe_id), "-geometry", "200x30", "-e", "python3","runClient1.py", self.CLIENT_ADDRESS, self.CLIENT_USER, self.CLIENT_PASSWD])
 
     def serverConf(self, event = None):
         self.SERVER_ADDRESS = self.serverIP.get()
@@ -114,9 +114,9 @@ class Server_Client():
         #print(self.SERVER_ADDRESS+self.SERVER_USER+self.SERVER_PASSWD)
         
     def ClientConf(self, event = None):
-        self.CLIENT_ADDRESS = self.clientIP.get()
-        self.CLIENT_USER = self.clientUser.get()
-        self.CLIENT_PASSWD = self.clientPasswd.get()
+        self.CLIENT_ADDRESS = self.ClientIP.get()
+        self.CLIENT_USER = self.ClientUser.get()
+        self.CLIENT_PASSWD = self.ClientPasswd.get()
         tkmsg.showinfo("Information","IP Address:"+self.CLIENT_ADDRESS+" User:"+self.CLIENT_USER+" Pass Word:"+self.CLIENT_PASSWD)
 
 
