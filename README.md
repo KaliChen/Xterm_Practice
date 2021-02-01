@@ -37,3 +37,20 @@ Collecting pycparser (from cffi>=1.1->bcrypt>=3.1.3->paramiko)
 Installing collected packages: pycparser, cffi, bcrypt, pynacl, paramiko
 Successfully installed bcrypt-3.2.0 cffi-1.14.4 paramiko-2.7.2 pycparser-2.20 pynacl-1.4.0
 ```
+```
+ pip3 install scp
+```
+```
+Looking in indexes: https://pypi.org/simple, https://www.piwheels.org/simple
+Collecting scp
+  Downloading https://files.pythonhosted.org/packages/b7/37/122d300034f2c8576158a7830e02c687730635e65a95f9eb2b4eb002554d/scp-0.13.3-py2.py3-none-any.whl
+Requirement already satisfied: paramiko in /home/pi/.local/lib/python3.7/site-packages (from scp) (2.7.2)
+Requirement already satisfied: cryptography>=2.5 in /usr/lib/python3/dist-packages (from paramiko->scp) (2.6.1)
+Requirement already satisfied: bcrypt>=3.1.3 in /home/pi/.local/lib/python3.7/site-packages (from paramiko->scp) (3.2.0)
+Requirement already satisfied: pynacl>=1.0.1 in /home/pi/.local/lib/python3.7/site-packages (from paramiko->scp) (1.4.0)
+Requirement already satisfied: cffi>=1.1 in /home/pi/.local/lib/python3.7/site-packages (from bcrypt>=3.1.3->paramiko->scp) (1.14.4)
+Requirement already satisfied: six>=1.4.1 in /usr/lib/python3/dist-packages (from bcrypt>=3.1.3->paramiko->scp) (1.12.0)
+Requirement already satisfied: pycparser in /home/pi/.local/lib/python3.7/site-packages (from cffi>=1.1->bcrypt>=3.1.3->paramiko->scp) (2.20)
+Installing collected packages: scp
+Successfully installed scp-0.13.3
+```
